@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auriculothérapie & Sevrage Tabagique | Libérez-vous du tabac</title>
+    <title>Auriculothérapie & Sevrage Tabagique | Libérez-vous du tabac naturellement</title>
     <style>
         /* ===== RESET & BASE ===== */
         * {
@@ -58,16 +58,17 @@
 
         /* ===== HEADER / HERO ===== */
         header {
-            background: linear-gradient(rgba(44, 62, 43, 0.85), rgba(44, 62, 43, 0.85)),
-                        url('https://images.unsplash.com/photo-1512678080530-7760d81faba1?w=1920&q=80') center/cover;
+            background: linear-gradient(rgba(44, 62, 43, 0.80), rgba(44, 62, 43, 0.80)),
+                        url('https://i.ibb.co/RXYBWsn/oreille-points.jpg') center/cover;
             color: #fff;
             text-align: center;
             padding: 6rem 2rem;
+            position: relative;
         }
 
         header p {
             font-size: 1.3rem;
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto 2rem;
             opacity: 0.95;
         }
@@ -227,6 +228,32 @@
             color: #666;
         }
 
+        /* ===== MÉTHODES ===== */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .method-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #c9a96e;
+        }
+
+        .method-card h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        .method-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
         /* ===== PROTOCOLE ===== */
         #protocole {
             background: #f5f0e8;
@@ -236,7 +263,6 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            counter-reset: step;
         }
 
         .step {
@@ -270,29 +296,32 @@
             color: #666;
         }
 
-        /* ===== TÉMOIGNAGES ===== */
-        .testimonials {
+        /* ===== AUTRES ADDICTIONS ===== */
+        #autres-addictions {
+            background: #fafaf7;
+        }
+
+        .addictions-list {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .testimonial {
+        .addiction-item {
             background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-left: 4px solid #c9a96e;
+            padding: 1.2rem 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.04);
         }
 
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial .author {
-            font-weight: bold;
-            color: #8b5e3c;
+        .addiction-icon {
+            font-size: 2rem;
         }
 
         /* ===== FAQ ===== */
@@ -336,8 +365,7 @@
 
         /* ===== CTA ===== */
         #cta {
-            background: linear-gradient(rgba(44, 62, 43, 0.9), rgba(44, 62, 43, 0.9)),
-                        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&q=80') center/cover;
+            background: linear-gradient(135deg, #2c3e2b 0%, #3d5239 50%, #4a6741 100%);
             color: #fff;
             text-align: center;
             padding: 5rem 2rem;
@@ -371,6 +399,16 @@
             text-decoration: none;
         }
 
+        .disclaimer {
+            background: #fdf3e0;
+            border-left: 4px solid #c9a96e;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: #6b4d2d;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
@@ -378,8 +416,9 @@
 
             .about-grid,
             .points-grid,
+            .methods-grid,
             .steps,
-            .testimonials {
+            .addictions-list {
                 grid-template-columns: 1fr;
             }
 
@@ -419,11 +458,11 @@
 
     <!-- ===== HERO HEADER ===== -->
     <header>
-        <span class="badge">Médecine douce • Sans substituts nicotiniques</span>
+        <span class="badge">Approche naturelle • Sans substituts nicotiniques</span>
         <h1>Arrêtez de fumer grâce à<br>l'auriculothérapie</h1>
-        <p>Une méthode naturelle, sans médicament, qui agit directement sur les points réflexes de l'oreille pour libérer votre dépendance au tabac.</p>
+        <p>Une méthode naturelle, sans médicament, qui agit directement sur les points réflexes de l'oreille pour vous accompagner vers la libération du tabac. Utilisation d'aiguilles ou de <strong>laser</strong>, selon votre préférence.</p>
         <a href="#cta" class="btn">Prendre rendez-vous</a>
-        <a href="#protocole" class="btn btn-outline">En savoir plus</a>
+        <a href="#protocole" class="btn btn-outline">Comment ça marche</a>
     </header>
 
     <!-- ===== NAVIGATION ===== -->
@@ -432,9 +471,10 @@
             <span class="logo">🌿 AuriculoTabac</span>
             <ul class="nav-links">
                 <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#methodes">Méthodes</a></li>
                 <li><a href="#points">Points clés</a></li>
                 <li><a href="#protocole">Protocole</a></li>
-                <li><a href="#temoignages">Témoignages</a></li>
+                <li><a href="#autres-addictions">Autres addictions</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#cta">Contact</a></li>
             </ul>
@@ -448,12 +488,39 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p>L'<strong>auriculothérapie</strong> est une technique issue de la médecine traditionnelle chinoise, reconnue par l'OMS depuis 1987. Elle repose sur la stimulation de <strong>points précis du pavillon de l'oreille</strong> correspondant à des zones du corps.</p>
-                    <p>Dans le cadre du <strong>sevrage tabagique</strong>, des études cliniques ont montré une efficacité significative : réduction du manque, diminution de l'irritabilité, et taux d'arrêt supérieur par rapport à un sevrage sans accompagnement.</p>
-                    <p>Aucun médicament, aucun substitut nicotinique : juste votre corps qui retrouve son équilibre naturel.</p>
+                    <p>Dans le cadre du <strong>sevrage tabagique</strong>, cette approche offre un accompagnement naturel. Nous utilisons soit des <strong>aiguilles semi-permanentes</strong> très fines, soit un <strong>laser de basse intensité</strong> totalement indolore, pour stimuler les points réflexes.</p>
+                    <p>Aucun médicament, aucun substitut nicotinique : juste une méthode douce pour aider votre corps à retrouver son équilibre naturel.</p>
+                    <p><strong>Le laser</strong> est particulièrement apprécié par les personnes sensibles ou ayant une appréhension des aiguilles. L'efficacité est équivalente.</p>
+                    <div class="disclaimer">
+                        <strong>⚠️ Information importante :</strong> Je ne suis pas un professionnel de santé. Je suis un <strong>praticien en auriculothérapie</strong>, formé à cette technique spécifique. Mon rôle est de vous <strong>accompagner</strong> dans votre démarche de libération du tabac, pas de vous soigner. L'auriculothérapie est une méthode complémentaire qui ne remplace pas un suivi médical. En cas de doute, consultez votre médecin traitant.
+                    </div>
                 </div>
                 <div class="about-image">
-                    <!-- Placeholder : Remplacez par votre image Leonardo -->
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Séance d'auriculothérapie">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Points d'auriculothérapie sur l'oreille">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MÉTHODES ===== -->
+    <section id="methodes">
+        <div class="container">
+            <h2>Deux méthodes à votre choix</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">🪡</div>
+                    <h3>Aiguilles semi-permanentes</h3>
+                    <p>Aiguilles très fines (0,2 mm) posées sur les points réflexes et laissées en place plusieurs jours pour une stimulation continue. Indolores et discrètes.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🔴</div>
+                    <h3>Laser basse intensité</h3>
+                    <p>Stimulation par faisceau laser indolore. Idéal pour les personnes sensibles ou ayant une appréhension des aiguilles. Aucune sensation désagréable.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🌱</div>
+                    <h3>Graines de Vaccaria</h3>
+                    <p>Petites graines naturelles collées sur les points avec un sparadrap. À presser en cas d'envie de fumer. Méthode douce et non invasive.</p>
                 </div>
             </div>
         </div>
@@ -473,7 +540,7 @@
                 <div class="point-card">
                     <div class="point-icon">🫁</div>
                     <h3>Point Poumon</h3>
-                    <p>Agit directement sur l'envie de fumer et aide à la régénération pulmonaire.</p>
+                    <p>Agit directement sur l'envie de fumer et soutient la régénération pulmonaire.</p>
                 </div>
                 <div class="point-card">
                     <div class="point-icon">🍽️</div>
@@ -493,7 +560,7 @@
                 <div class="point-card">
                     <div class="point-icon">🧘</div>
                     <h3>Point Rein</h3>
-                    <p>Renforce la volonté et la détermination, essentielle pour tenir dans la durée.</p>
+                    <p>Renforce la volonté et la détermination, essentielles pour tenir dans la durée.</p>
                 </div>
             </div>
         </div>
@@ -502,7 +569,7 @@
     <!-- ===== PROTOCOLE ===== -->
     <section id="protocole">
         <div class="container">
-            <h2>Votre protocole en 4 étapes</h2>
+            <h2>Votre parcours en 4 étapes</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
@@ -512,7 +579,7 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Séances de stimulation</h3>
-                    <p>Pose d'aiguilles semi-permanentes ou de graines de vaccaria sur les points ciblés.</p>
+                    <p>Pose d'aiguilles, utilisation du laser ou de graines de vaccaria selon votre choix.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
@@ -528,24 +595,38 @@
         </div>
     </section>
 
-    <!-- ===== TÉMOIGNAGES ===== -->
-    <section id="temoignages">
+    <!-- ===== AUTRES ADDICTIONS ===== -->
+    <section id="autres-addictions">
         <div class="container">
-            <h2>Ils ont arrêté grâce à l'auriculothérapie</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>« Après 25 ans de tabac et multiples tentatives, l'auriculothérapie a été la seule méthode qui a fonctionné. Plus une cigarette depuis 8 mois. »</p>
-                    <span class="author">— Philippe, 52 ans</span>
+            <h2>Au-delà du tabac : d'autres addictions concernées</h2>
+            <p style="text-align:center; max-width:650px; margin: 0 auto 2rem;">L'auriculothérapie peut également accompagner les personnes souhaitant se libérer d'autres dépendances :</p>
+            <div class="addictions-list">
+                <div class="addiction-item">
+                    <span class="addiction-icon">🍷</span>
+                    <span><strong>Alcool</strong> — réduction des envies</span>
                 </div>
-                <div class="testimonial">
-                    <p>« J'étais sceptique au départ. Mais dès la première séance, mon envie de fumer a diminué de moitié. Aujourd'hui libérée, je revis ! »</p>
-                    <span class="author">— Sophie, 39 ans</span>
+                <div class="addiction-item">
+                    <span class="addiction-icon">🍬</span>
+                    <span><strong>Sucre</strong> — grignotages compulsifs</span>
                 </div>
-                <div class="testimonial">
-                    <p>« Sans médicament, sans prise de poids, et surtout sans crise de nerfs ! Je recommande à tous les fumeurs qui veulent vraiment arrêter. »</p>
-                    <span class="author">— Karim, 45 ans</span>
+                <div class="addiction-item">
+                    <span class="addiction-icon">📱</span>
+                    <span><strong>Écrans</strong> — dépendance numérique</span>
+                </div>
+                <div class="addiction-item">
+                    <span class="addiction-icon">💊</span>
+                    <span><strong>Médicaments</strong> — anxiolytiques, somnifères</span>
+                </div>
+                <div class="addiction-item">
+                    <span class="addiction-icon">🎰</span>
+                    <span><strong>Jeux</strong> — addiction aux jeux d'argent</span>
+                </div>
+                <div class="addiction-item">
+                    <span class="addiction-icon">🍔</span>
+                    <span><strong>Troubles alimentaires</strong> — compulsions</span>
                 </div>
             </div>
+            <p style="text-align:center; margin-top: 2rem; font-size: 0.95rem; color: #777;">Pour toutes ces dépendances, l'auriculothérapie constitue un <strong>soutien complémentaire</strong> à un éventuel suivi médical ou psychologique.</p>
         </div>
     </section>
 
@@ -556,25 +637,31 @@
             <div class="faq-item">
                 <div class="faq-question">Est-ce que ça fait mal ?</div>
                 <div class="faq-answer">
-                    <p>Non, les aiguilles utilisées sont extrêmement fines (0,2 mm). La pose est indolore ou procure une légère sensation de picotement qui disparaît rapidement.</p>
+                    <p>Non. Les aiguilles sont extrêmement fines (0,2 mm). Pour les personnes sensibles, nous proposons le <strong>laser</strong>, totalement indolore. La pose est douce et ne dure que quelques secondes.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Combien de séances faut-il ?</div>
                 <div class="faq-answer">
-                    <p>En moyenne 4 à 6 séances suffisent. La première séance apporte souvent un soulagement immédiat. Un suivi d'entretien peut être proposé.</p>
+                    <p>En moyenne 4 à 6 séances. La première apporte souvent un soulagement immédiat. Un suivi d'entretien peut être proposé selon vos besoins.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Y a-t-il des effets secondaires ?</div>
                 <div class="faq-answer">
-                    <p>Aucun effet secondaire notable. Contrairement aux substituts nicotiniques, il n'y a pas de dépendance de substitution ni d'effets indésirables médicamenteux.</p>
+                    <p>Aucun effet secondaire notable, que ce soit avec les aiguilles ou le laser. Pas de dépendance de substitution ni d'effets indésirables médicamenteux.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Est-ce remboursé ?</div>
+                <div class="faq-question">Le laser est-il aussi efficace que les aiguilles ?</div>
                 <div class="faq-answer">
-                    <p>L'auriculothérapie n'est pas remboursée par la Sécurité Sociale, mais de nombreuses mutuelles proposent un forfait médecine douce. Renseignez-vous auprès de la vôtre.</p>
+                    <p>Oui, les études montrent une efficacité comparable entre le laser basse intensité et les aiguilles. Le choix dépend uniquement de votre préférence personnelle.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">L'auriculothérapie fonctionne-t-elle pour d'autres addictions ?</div>
+                <div class="faq-answer">
+                    <p>Oui. L'auriculothérapie peut accompagner les personnes souhaitant réduire leur dépendance à l'alcool, au sucre, aux écrans, aux médicaments ou encore aux jeux. C'est un <strong>soutien complémentaire</strong>, pas un traitement médical.</p>
                 </div>
             </div>
         </div>
@@ -583,15 +670,17 @@
     <!-- ===== CTA ===== -->
     <section id="cta">
         <h2>Prêt à vous libérer du tabac ?</h2>
-        <p>Prenez rendez-vous pour une première séance et faites le premier pas vers une vie sans cigarette.</p>
+        <p>Prenez rendez-vous dès maintenant et faites le premier pas vers une vie sans cigarette, en choisissant la méthode qui vous convient le mieux.</p>
+        <p style="font-size:1rem; margin-bottom:2rem;">✨ Aiguilles ou laser : c'est vous qui décidez ✨</p>
         <a href="#" class="btn" style="font-size:1.2rem;">📅 Prendre rendez-vous</a>
         <p style="margin-top:1.5rem; font-size:0.95rem;">Ou appelez-nous : <strong>01 23 45 67 89</strong></p>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <p>© 2026 AuriculoTabac — Cabinet d'auriculothérapie spécialisé dans le sevrage tabagique</p>
-        <p style="margin-top:0.5rem;">Site informatif — Consultez votre médecin traitant avant toute démarche de sevrage</p>
+        <p>© 2026 AuriculoTabac — Pratique de l'auriculothérapie pour l'accompagnement au sevrage tabagique et autres addictions</p>
+        <p style="margin-top:0.5rem;">Praticien en auriculothérapie — Accompagnement et bien-être, sans visée médicale</p>
+        <p style="margin-top:0.5rem; font-size:0.85rem;">Ce site présente une méthode complémentaire. Consultez votre médecin traitant pour un suivi adapté.</p>
     </footer>
 
     <!-- ===== SCRIPT FAQ ===== -->
