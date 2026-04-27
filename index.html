@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auriculothérapie & Sevrage Tabagique | Libérez-vous du tabac</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fdfaf6;
+        }
+
+        /* ===== TYPOGRAPHIE ===== */
+        h1, h2, h3 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #2c3e2b;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #8b5e3c;
+            margin: 1rem auto 0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4a6741;
+        }
+
+        /* ===== HEADER / HERO ===== */
+        header {
+            background: linear-gradient(rgba(44, 62, 43, 0.85), rgba(44, 62, 43, 0.85)),
+                        url('https://images.unsplash.com/photo-1512678080530-7760d81faba1?w=1920&q=80') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #c9a96e;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background: #b8954f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #fff;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #2c3e2b;
+            border-color: #fff;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            background: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            color: #2c3e2b;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8b5e3c;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 5rem 0;
+        }
+
+        /* ===== À PROPOS ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== POINTS ===== */
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .point-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .point-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .point-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .point-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .point-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* ===== PROTOCOLE ===== */
+        #protocole {
+            background: #f5f0e8;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            counter-reset: step;
+        }
+
+        .step {
+            background: #fff;
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #8b5e3c;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* ===== TÉMOIGNAGES ===== */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 4px solid #c9a96e;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            color: #8b5e3c;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            background: #fff;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #8b5e3c;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.2rem;
+            color: #555;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+
+        /* ===== CTA ===== */
+        #cta {
+            background: linear-gradient(rgba(44, 62, 43, 0.9), rgba(44, 62, 43, 0.9)),
+                        url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&q=80') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        #cta h2 {
+            color: #fff;
+        }
+
+        #cta h2::after {
+            background: #c9a96e;
+        }
+
+        #cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a2b1a;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #c9a96e;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.7rem; }
+
+            .about-grid,
+            .points-grid,
+            .steps,
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            header {
+                padding: 4rem 1rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 0.5rem auto;
+                text-align: center;
+                max-width: 300px;
+            }
+
+            .btn-outline {
+                margin-left: auto;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HERO HEADER ===== -->
+    <header>
+        <span class="badge">Médecine douce • Sans substituts nicotiniques</span>
+        <h1>Arrêtez de fumer grâce à<br>l'auriculothérapie</h1>
+        <p>Une méthode naturelle, sans médicament, qui agit directement sur les points réflexes de l'oreille pour libérer votre dépendance au tabac.</p>
+        <a href="#cta" class="btn">Prendre rendez-vous</a>
+        <a href="#protocole" class="btn btn-outline">En savoir plus</a>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="container">
+            <span class="logo">🌿 AuriculoTabac</span>
+            <ul class="nav-links">
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#points">Points clés</a></li>
+                <li><a href="#protocole">Protocole</a></li>
+                <li><a href="#temoignages">Témoignages</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== À PROPOS ===== -->
+    <section id="a-propos">
+        <div class="container">
+            <h2>Pourquoi l'auriculothérapie ?</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>L'<strong>auriculothérapie</strong> est une technique issue de la médecine traditionnelle chinoise, reconnue par l'OMS depuis 1987. Elle repose sur la stimulation de <strong>points précis du pavillon de l'oreille</strong> correspondant à des zones du corps.</p>
+                    <p>Dans le cadre du <strong>sevrage tabagique</strong>, des études cliniques ont montré une efficacité significative : réduction du manque, diminution de l'irritabilité, et taux d'arrêt supérieur par rapport à un sevrage sans accompagnement.</p>
+                    <p>Aucun médicament, aucun substitut nicotinique : juste votre corps qui retrouve son équilibre naturel.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder : Remplacez par votre image Leonardo -->
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Séance d'auriculothérapie">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POINTS CLÉS ===== -->
+    <section id="points">
+        <div class="container">
+            <h2>Les points auriculaires ciblés</h2>
+            <p style="text-align:center; max-width:700px; margin: 0 auto 2rem;">Des points spécifiques de l'oreille sont stimulés pour agir sur les mécanismes de la dépendance au tabac.</p>
+            <div class="points-grid">
+                <div class="point-card">
+                    <div class="point-icon">🧠</div>
+                    <h3>Point Shen Men</h3>
+                    <p>Réduit l'anxiété et le stress liés au manque. Favorise la relaxation profonde.</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">🫁</div>
+                    <h3>Point Poumon</h3>
+                    <p>Agit directement sur l'envie de fumer et aide à la régénération pulmonaire.</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">🍽️</div>
+                    <h3>Point Bouche</h3>
+                    <p>Diminue le réflexe gestuel et la pulsion orale de porter la cigarette aux lèvres.</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">🌿</div>
+                    <h3>Point Faim / Appétit</h3>
+                    <p>Contrôle la sensation de faim compensatoire fréquente lors de l'arrêt du tabac.</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">💪</div>
+                    <h3>Point Endocrine</h3>
+                    <p>Rééquilibre le système hormonal perturbé par la nicotine.</p>
+                </div>
+                <div class="point-card">
+                    <div class="point-icon">🧘</div>
+                    <h3>Point Rein</h3>
+                    <p>Renforce la volonté et la détermination, essentielle pour tenir dans la durée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROTOCOLE ===== -->
+    <section id="protocole">
+        <div class="container">
+            <h2>Votre protocole en 4 étapes</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Bilan initial</h3>
+                    <p>Évaluation de votre dépendance, de votre historique tabagique et de votre motivation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Séances de stimulation</h3>
+                    <p>Pose d'aiguilles semi-permanentes ou de graines de vaccaria sur les points ciblés.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Suivi régulier</h3>
+                    <p>3 à 5 séances espacées d'une semaine pour consolider les résultats.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Autonomie</h3>
+                    <p>Apprentissage de l'auto-stimulation des points pour gérer les envies résiduelles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TÉMOIGNAGES ===== -->
+    <section id="temoignages">
+        <div class="container">
+            <h2>Ils ont arrêté grâce à l'auriculothérapie</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>« Après 25 ans de tabac et multiples tentatives, l'auriculothérapie a été la seule méthode qui a fonctionné. Plus une cigarette depuis 8 mois. »</p>
+                    <span class="author">— Philippe, 52 ans</span>
+                </div>
+                <div class="testimonial">
+                    <p>« J'étais sceptique au départ. Mais dès la première séance, mon envie de fumer a diminué de moitié. Aujourd'hui libérée, je revis ! »</p>
+                    <span class="author">— Sophie, 39 ans</span>
+                </div>
+                <div class="testimonial">
+                    <p>« Sans médicament, sans prise de poids, et surtout sans crise de nerfs ! Je recommande à tous les fumeurs qui veulent vraiment arrêter. »</p>
+                    <span class="author">— Karim, 45 ans</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+        <div class="container">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">Est-ce que ça fait mal ?</div>
+                <div class="faq-answer">
+                    <p>Non, les aiguilles utilisées sont extrêmement fines (0,2 mm). La pose est indolore ou procure une légère sensation de picotement qui disparaît rapidement.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Combien de séances faut-il ?</div>
+                <div class="faq-answer">
+                    <p>En moyenne 4 à 6 séances suffisent. La première séance apporte souvent un soulagement immédiat. Un suivi d'entretien peut être proposé.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Y a-t-il des effets secondaires ?</div>
+                <div class="faq-answer">
+                    <p>Aucun effet secondaire notable. Contrairement aux substituts nicotiniques, il n'y a pas de dépendance de substitution ni d'effets indésirables médicamenteux.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Est-ce remboursé ?</div>
+                <div class="faq-answer">
+                    <p>L'auriculothérapie n'est pas remboursée par la Sécurité Sociale, mais de nombreuses mutuelles proposent un forfait médecine douce. Renseignez-vous auprès de la vôtre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section id="cta">
+        <h2>Prêt à vous libérer du tabac ?</h2>
+        <p>Prenez rendez-vous pour une première séance et faites le premier pas vers une vie sans cigarette.</p>
+        <a href="#" class="btn" style="font-size:1.2rem;">📅 Prendre rendez-vous</a>
+        <p style="margin-top:1.5rem; font-size:0.95rem;">Ou appelez-nous : <strong>01 23 45 67 89</strong></p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2026 AuriculoTabac — Cabinet d'auriculothérapie spécialisé dans le sevrage tabagique</p>
+        <p style="margin-top:0.5rem;">Site informatif — Consultez votre médecin traitant avant toute démarche de sevrage</p>
+    </footer>
+
+    <!-- ===== SCRIPT FAQ ===== -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
